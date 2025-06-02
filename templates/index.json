@@ -25,11 +25,19 @@
             "title": "We design, build and optimise exceptionale Commerce websites.",
             "heading_size": "h2"
           }
+        },
+        "button_BpfYR4": {
+          "type": "button",
+          "settings": {
+            "button_text": "Start Your Project",
+            "button_link": "#"
+          }
         }
       },
       "block_order": [
         "caption_PLnmia",
-        "heading_eidfAp"
+        "heading_eidfAp",
+        "button_BpfYR4"
       ],
       "settings": {
         "color_schemes": "",
