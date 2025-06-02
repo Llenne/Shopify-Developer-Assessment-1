@@ -77,6 +77,7 @@
     const id = document.querySelector('.product-variant-id').value;
     const button = document.querySelector('.add-to-cart');
     const bubble_count = document.querySelector('.cart-count-bubble span');
+    const cart_icon = document.querySelector('.header__icon--cart');
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -102,7 +103,7 @@
         console.log('added to the cart', data);
         button.innerHTML = 'Added To Cart';
         if(!bubble_count){
-          bubble_count.textContent = '1';
+          cart_icon.innerHTML = '<div class="cart-count-bubble"><span aria-hidden="true">1</span><span class="visually-hidden">1 items</span></div>';
         }else{
           const new_count = parseInt(bubble_count.textContent, 10) + 1;
           bubble_count.textContent = new_count;
