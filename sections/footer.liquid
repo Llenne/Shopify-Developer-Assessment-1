@@ -1,6 +1,61 @@
+{%  style  %} 
+
+  h3{
+    color: #000;
+    text-transform: uppercase;
+  }
+
+  footer a{
+    color: #2BD896;
+    text-decoration: none;
+  }
+
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 990px){
+    .footer-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .copyrights a{
+    text-decoration: none;
+    color: #000;
+  }
+
+  .footer-grid .policies{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-grid .policies a{
+    color: #2BD896;
+    text-decoration: none;
+  }
+{% endstyle %}
+
 <footer class="footer">
   <div class="page-width">
-    Footer Here
+    <h3>Contact Us</h3>
+    <a href="mailto:hello@shopify.com">hello@shopify.com</a>
+    <div class="footer-grid">
+      <div class="copyrights">
+        <small class="copyright__content"
+          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}. All rights reserved.
+        </small>
+      </div>
+      <div class="policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Returns</a>
+      </div>
+    </div>
   </div>
 </footer>
 

@@ -248,3 +248,23 @@ Custom CSS
 s{
   text-decoration: line-through;
 }
+
+.header__icon--cart{
+  position: relative;
+}
+
+.cart-count-bubble{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #c6474b;
+  color: #ffffff;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

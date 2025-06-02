@@ -1,0 +1,10 @@
+
+<cart-items>
+    <div class="page-width">
+    {%- if cart != empty -%}
+        {%- for item in cart.items -%}
+            <h2>{{ item.title }}</h2>
+        {% endfor %}
+    {% endif %}
+    </div>
+</cart-items>

@@ -52,9 +52,16 @@
           </div>
 
           <div class="product-add-to-cart">
-            {%  form 'product', product %} 
-              <button class="button add-to-cart" type="submit" name="Add To Cart">Add To Cart</button>
-            {% endform %}
+            <form id="addToCart">
+              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" class="product-variant-id">
+          <button class="button add-to-cart" {% unless product.available %}disabled{% endunless %} type="submit" name="Add To Cart">
+            {% if product.available %}
+              Add To Cart
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+            </form>
           </div>
         {% endif %}
       </div>
@@ -63,6 +70,47 @@
     {% render 'product-more-info', product:product %}
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('addToCart');
+    const id = document.querySelector('.product-variant-id').value;
+    const button = document.querySelector('.add-to-cart');
+    const bubble_count = document.querySelector('.cart-count-bubble span');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let formData = {
+      'items': [{
+        'id': id,
+        'quantity': 1
+        }]
+      };
+
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log('added to the cart', data);
+        button.innerHTML = 'Added To Cart';
+        const new_count = parseInt(bubble_count.textContent, 10) + 1;
+        bubble_count.textContent = new_count;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+
+  });
+</script>
 
 {% schema %}
 {

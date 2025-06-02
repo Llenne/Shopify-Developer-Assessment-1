@@ -1,5 +1,37 @@
-<div>
+<div class="accordion">
     {% if product.metafields.custom.materials != blank %}
-        {{ product.metafields.custom.materials | metafield_text }}
+        <div class="accordion-item">
+            <button class="accordion-header"><span>Materials</span> <span class="icon-chevron">></span></button>
+            <div class="accordion-content">
+            {{ product.metafields.custom.materials | metafield_tag }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if product.metafields.custom.delivery_information != blank %}
+        <div class="accordion-item">
+            <button class="accordion-header"><span>Delivery Information</span> <span class="icon-chevron">></span></button>
+            <div class="accordion-content">
+            {{ product.metafields.custom.delivery_information | metafield_tag }}
+            </div>
+        </div>
     {% endif %}
 </div>
+
+<script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+
+            button.classList.toggle('active');
+
+            if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            } else {
+            // Close other accordions (optional)
+            document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+            content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+</script>
