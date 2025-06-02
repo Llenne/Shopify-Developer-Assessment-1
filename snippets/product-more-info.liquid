@@ -1,3 +1,5 @@
 <div>
-    [Place the accordion here]
+    {% if product.metafields.custom.materials != blank %}
+        {{ product.metafields.custom.materials | metafield_text }}
+    {% endif %}
 </div>

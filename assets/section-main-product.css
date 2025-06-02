@@ -1,0 +1,80 @@
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 990px){
+    .product-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product-information > *{
+    margin-bottom: 2rem;
+}
+
+.product-grid .product-title{
+    font-size: 2.2rem;
+}
+
+.product-grid .product-price span{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.product-grid .product-price span.product_regular--price{
+    color: #000;
+}
+
+.product-grid .product-price span.product_old--price{
+    color: #D9D9D9;
+}
+
+.product-grid .product-price .product_price--badge{
+    color: rgb(var(--color-button));
+    font-size: 1rem;
+    text-transform: lowercase;
+}
+
+.product-content{
+    color: rgb(--color-foreground);
+    font-size: 1.2rem;
+}
+
+@media (min-width: 750px){
+    .product-content{
+        font-size: 1.4rem;
+    }
+}
+
+.product-tags{
+    display: flex;
+    align-items: center;
+    gap: 3.6rem;
+}
+
+.product-tags span{
+    color: #818181;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.product-tags span:not(:last-child)::after{
+    content: '';
+    width: .6rem;
+    height: .6rem;
+    position: absolute;
+    right: -2.1rem;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    background: #d9d9d9;
+    border-radius: 50%;
+}
+
+@media (min-width: 750px){
+    .product-tags span{
+        font-size: 1.4rem;
+    }
+}

@@ -71,11 +71,12 @@ h5,
 .h5 {
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
-  font-weight: var(--font-heading-weight);
+  font-weight: 700;
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
+  text-transform: uppercase;
 }
 
 .hxl {
@@ -118,7 +119,7 @@ h2,
 @media only screen and (min-width: 750px) {
   h2,
   .h2 {
-    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    font-size: calc(var(--font-heading-scale) * 2.8rem);
   }
 }
 
@@ -172,7 +173,7 @@ h6,
 /* Page Width */
 
 .page-width {
-  max-width: 1120px;
+  max-width: var(--page-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -229,3 +230,21 @@ h6,
 /* --------------------
 Custom CSS 
 */
+
+.button{
+  background-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  display: inline-block;
+  border-radius: .5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  padding: 1rem 3.5rem;
+  width: max-content;
+  font-weight: 700;
+}
+
+s{
+  text-decoration: line-through;
+}
