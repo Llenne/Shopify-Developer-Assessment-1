@@ -40,6 +40,8 @@
         "button_BpfYR4"
       ],
       "settings": {
+        "desktop_banner": "shopify://shop_images/photographer-working-at-his-desk.jpg",
+        "mobile_banner": "shopify://shop_images/hands-hold-paint-items-over-a-pallet.jpg",
         "color_schemes": "",
         "desktop_content_position": "middle-center",
         "text_alignment": "left",
