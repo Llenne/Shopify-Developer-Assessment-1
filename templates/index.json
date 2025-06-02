@@ -54,9 +54,9 @@
     "featured_product_9bnXxD": {
       "type": "featured-product",
       "settings": {
-        "product": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "product": "the-collection-snowboard-liquid",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
