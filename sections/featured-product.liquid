@@ -101,7 +101,7 @@
       .then(data => {
         console.log('added to the cart', data);
         button.innerHTML = 'Added To Cart';
-        if(bubble_count.textContent == '' ){
+        if(!bubble_count){
           bubble_count.textContent = '1';
         }else{
           const new_count = parseInt(bubble_count.textContent, 10) + 1;
