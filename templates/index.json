@@ -42,7 +42,7 @@
       "settings": {
         "desktop_banner": "shopify://shop_images/photographer-working-at-his-desk.jpg",
         "mobile_banner": "shopify://shop_images/hands-hold-paint-items-over-a-pallet.jpg",
-        "color_schemes": "",
+        "color_schemes": "scheme-1",
         "desktop_content_position": "bottom-left",
         "text_alignment": "left",
         "content-max-width": 360,
