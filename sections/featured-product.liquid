@@ -16,7 +16,7 @@
 
 {% assign product = section.settings.product %}
 
-<div class="main-product main_product-section-{{ section.id }}">
+<div class="main-product main_product-section-{{ section.id }} color-scheme-1">
   <div class="page-width">
     <div class="product-grid">
       <div class="product_media-banner">
@@ -101,8 +101,12 @@
       .then(data => {
         console.log('added to the cart', data);
         button.innerHTML = 'Added To Cart';
-        const new_count = parseInt(bubble_count.textContent, 10) + 1;
-        bubble_count.textContent = new_count;
+        if(bubble_count.textContent == '' ){
+          bubble_count.textContent = '1';
+        }else{
+          const new_count = parseInt(bubble_count.textContent, 10) + 1;
+          bubble_count.textContent = new_count;
+        }
       })
       .catch((error) => {
         console.error('Error:', error);

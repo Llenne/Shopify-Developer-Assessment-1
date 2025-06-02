@@ -113,7 +113,7 @@
     font-weight: 700;
 }
 
-.accordion-header:not(:last-child){
+.accordion-header.active{
     border-bottom: 1px solid #000000;
 }
 
@@ -132,6 +132,10 @@
     background: white;
     transition: max-height 0.3s ease;
     padding: 0 1rem;
+}
+
+.accordion-item:not(:last-child) .accordion-content{
+    border-bottom: 1px solid #000000;
 }
 
 .accordion-content p {
