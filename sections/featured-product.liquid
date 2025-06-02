@@ -103,7 +103,7 @@
         console.log('added to the cart', data);
         button.innerHTML = 'Added To Cart';
         if(!bubble_count){
-          cart_icon.innerHTML = '<div class="cart-count-bubble"><span aria-hidden="true">1</span><span class="visually-hidden">1 items</span></div>';
+          cart_icon.appendChild('<div class="cart-count-bubble"><span aria-hidden="true">1</span><span class="visually-hidden">1 items</span></div>');
         }else{
           const new_count = parseInt(bubble_count.textContent, 10) + 1;
           bubble_count.textContent = new_count;
